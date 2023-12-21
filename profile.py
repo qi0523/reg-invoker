@@ -7,7 +7,8 @@ import geni.portal as portal
 import geni.rspec.pg as rspec
 import geni.rspec.emulab
 
-IMAGE = "urn:publicid:IDN+cloudlab.umass.edu+image+containernetwork-PG0:k8s-reg-dlcl"
+# IMAGE = "urn:publicid:IDN+cloudlab.umass.edu+image+containernetwork-PG0:k8s-reg-dlcl"
+IMAGE = "urn:publicid:IDN+wisc.cloudlab.us+image+containernetwork-PG0:wisc-k8s-dlcl"
 
 pc = portal.Context()
 
@@ -17,13 +18,13 @@ pc.defineParameter("X", "Number of containers per physical node",
 pc.defineParameter("cores",
                    "Invoker cpu cores",
                    portal.ParameterType.INTEGER,
-                   1,
+                   2,
                    longDescription="Invoker cpu cores.")
 
 pc.defineParameter("memory",
                    "Invoker memory",
                    portal.ParameterType.INTEGER,
-                   5120,
+                   8192,
                    longDescription="Invoker memory.")
 
 pc.defineParameter("bandwidth",
@@ -34,12 +35,12 @@ pc.defineParameter("bandwidth",
 
 pc.defineParameter("hardware_type",
                    "Optional physical node type (utah:xl170 |d6515|c6525-25g|c6525-100g  clem: r7525|r650|r6525)",
-                   portal.ParameterType.STRING, "rs620")
+                   portal.ParameterType.STRING, "c220g5")
 
 pc.defineParameter("disk",
                    "Invoker gc disk",
                    portal.ParameterType.INTEGER,
-                   500,
+                   1024,
                    longDescription="Invoker bandwidth.")
 
 pc.defineParameter("nodeCount", 
@@ -50,7 +51,7 @@ pc.defineParameter("nodeCount",
 pc.defineParameter("masterIP", 
                    "Master ip address",
                    portal.ParameterType.STRING, 
-                   "172.17.1.1")
+                   "172.16.1.1")
 
 pc.defineParameter("registryIP", 
                    "Registry ip address",
