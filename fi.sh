@@ -54,8 +54,8 @@ set_ip_to_master_py(){
 }
 
 wait_join_k8s() {
-    sudo kubeadm join 172.17.66.1:6443 --token gmj9h9.fb6ypkqfxwavymbd \
-	    --discovery-token-ca-cert-hash sha256:404f462920f63035c37bf6eddcb87fe4c9ce68471f5ac9559486c7b3c7f3172a
+    sudo kubeadm join 172.17.65.1:6443 --token mnervw.4wbmglaz0r9e1ege \
+	--discovery-token-ca-cert-hash sha256:4f02471b0103277c50033c090e5c8a2cc9996b3b498716e165caa29afbf6e6c7 
 }
 
 setup_invoker() {
