@@ -136,7 +136,7 @@ sudo sed -i "s/MASTERIP/$1/" /etc/overlaybd-snapshotter/config.json
 
 sudo systemctl restart overlaybd-snapshotter
 
-bash /local/repository/registry.sh
+bash /local/repository/registry.sh $2
 
 # sudo nerdctl run -d -p 35000:5000 -v /proj/containernetwork-PG0/registry:/var/lib/registry --restart=always --name registry registry
 

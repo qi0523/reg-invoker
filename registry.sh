@@ -9,7 +9,7 @@ HOST_ETH0_IP=$(ifconfig eth0 | awk 'NR==2{print $2}')
 HOST_NAME=$(hostname | awk 'BEGIN{FS="."}{print $1}')
 
 sudo mkdir -p /var/lib/registry
-sudo nerdctl run -d -p 35000:5000 -v /var/lib/registry:/var/lib/registry --restart=always --name registry registry
+sudo nerdctl run -d -p 35000:5000 -v /var/lib/registry:/var/lib/registry --restart=always --name registry registry:2
 
 sudo nerdctl pull -q qi0523/action-dotnet-v3.1:obd
 sudo nerdctl tag qi0523/action-dotnet-v3.1:obd $HOST_ETH0_IP:35000/openwhisk/action-dotnet-v3.1:obd
@@ -52,3 +52,5 @@ sudo nerdctl tag qi0523/java8action:obd $HOST_ETH0_IP:35000/openwhisk/java8actio
 sudo nerdctl --insecure-registry=true push $HOST_ETH0_IP:35000/openwhisk/java8action:obd
 sudo nerdctl rmi $HOST_ETH0_IP:35000/openwhisk/java8action:obd
 sudo nerdctl rmi qi0523/java8action:obd
+
+sudo wondershaper -a eth0 -d $1 -u $1

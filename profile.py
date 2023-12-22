@@ -7,8 +7,8 @@ import geni.portal as portal
 import geni.rspec.pg as rspec
 import geni.rspec.emulab
 
-# IMAGE = "urn:publicid:IDN+cloudlab.umass.edu+image+containernetwork-PG0:k8s-reg-dlcl"
-IMAGE = "urn:publicid:IDN+wisc.cloudlab.us+image+containernetwork-PG0:wisc-k8s-dlcl"
+IMAGE = "urn:publicid:IDN+cloudlab.umass.edu+image+containernetwork-PG0:k8s-reg-dlcl"
+# IMAGE = "urn:publicid:IDN+wisc.cloudlab.us+image+containernetwork-PG0:wisc-k8s-dlcl"
 
 pc = portal.Context()
 
@@ -51,7 +51,7 @@ pc.defineParameter("nodeCount",
 pc.defineParameter("masterIP", 
                    "Master ip address",
                    portal.ParameterType.STRING, 
-                   "172.16.1.1")
+                   "172.17.1.1")
 
 pc.defineParameter("registryIP", 
                    "Registry ip address",
