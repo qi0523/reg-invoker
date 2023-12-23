@@ -17,6 +17,18 @@ sudo nerdctl --insecure-registry=true push $HOST_ETH0_IP:35000/openwhisk/action-
 sudo nerdctl rmi $HOST_ETH0_IP:35000/openwhisk/action-dotnet-v3.1:obd
 sudo nerdctl rmi qi0523/action-dotnet-v3.1:obd
 
+sudo nerdctl pull -q qi0523/action-nodejs-v10:obd
+sudo nerdctl tag qi0523/action-nodejs-v10:obd $HOST_ETH0_IP:35000/openwhisk/action-nodejs-v10:obd
+sudo nerdctl --insecure-registry=true push $HOST_ETH0_IP:35000/openwhisk/action-nodejs-v10:obd
+sudo nerdctl rmi $HOST_ETH0_IP:35000/openwhisk/action-nodejs-v10:obd
+sudo nerdctl rmi qi0523/action-nodejs-v10:obd
+
+sudo nerdctl pull -q qi0523/action-nodejs-v12:obd
+sudo nerdctl tag qi0523/action-nodejs-v12:obd $HOST_ETH0_IP:35000/openwhisk/action-nodejs-v12:obd
+sudo nerdctl --insecure-registry=true push $HOST_ETH0_IP:35000/openwhisk/action-nodejs-v12:obd
+sudo nerdctl rmi $HOST_ETH0_IP:35000/openwhisk/action-nodejs-v12:obd
+sudo nerdctl rmi qi0523/action-nodejs-v12:obd
+
 sudo nerdctl pull -q qi0523/action-nodejs-v14:obd
 sudo nerdctl tag qi0523/action-nodejs-v14:obd $HOST_ETH0_IP:35000/openwhisk/action-nodejs-v14:obd
 sudo nerdctl --insecure-registry=true push $HOST_ETH0_IP:35000/openwhisk/action-nodejs-v14:obd
